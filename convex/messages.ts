@@ -20,6 +20,17 @@ export const get = query({
       throw new ConvexError("User not found");
     }
 
+    const membership = ctx.db
+      .query("conversationMembers")
+      .withIndex("by_memberId_conversationId", (q) =>
+        q.eq("memberId", currentUser._id).eq("conversationId", args.id),
+      )
+      .unique();
+
+    if (!membership) {
+      throw new ConvexError("You are not a member of this conversation");
+    }
+
     const messages = await ctx.db
       .query("messages")
       .withIndex("by_conversationId", (q) => q.eq("conversationId", args.id))
@@ -33,7 +44,16 @@ export const get = query({
         if (!messageSender) {
           throw new ConvexError("Could not find sender");
         }
+
+        return {
+          message,
+          senderImage: messageSender.imageUrl,
+          senderName: messageSender.username,
+          isCurrentUser: messageSender._id === currentUser._id,
+        };
       }),
     );
+
+    return messagesWithUsers;
   },
 });
