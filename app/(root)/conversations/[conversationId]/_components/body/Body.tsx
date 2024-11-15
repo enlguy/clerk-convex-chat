@@ -21,7 +21,7 @@ const Body = (props: Props) => {
       {messages?.map(
         ({ message, senderImage, senderName, isCurrentUser }, index) => {
           const lastByUser =
-            messages[index - 1].message.senderId ===
+            messages[index - 1]?.message.senderId ===
             messages[index].message.senderId;
 
           return (
