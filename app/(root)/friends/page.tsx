@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 "use client";
 
 import ConversationFallback from "@/components/shared/conversation/ConversationFallback";

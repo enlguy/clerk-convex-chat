@@ -53,7 +53,7 @@ const createGroupFormSchema = z.object({
     .min(1, { message: "You must select at least one friend" }),
 });
 
-const CreateGroupDialog = (props: Props) => {
+const CreateGroupDialog = () => {
   const friends = useQuery(api.friends.get);
 
   const { mutate: createGroup, pending } = useMutationState(
