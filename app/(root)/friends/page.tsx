@@ -1,7 +1,7 @@
 "use client";
 
 import ConversationFallback from "@/components/shared/conversation/ConversationFallback";
-import ItemList from "@/components/shared/item-list/ItemList";
+import { ItemList } from "@/components/index";
 import React from "react";
 import AddFriendDialog from "./_components/AddFriendDialog";
 import { useQuery } from "convex/react";
