@@ -1,4 +1,4 @@
-import ItemList from "@/components/shared/item-list/ItemList";
+import ItemList from "./shared/item-list/ItemList";
 
 module.exports = { ItemList };
 export { ItemList };
