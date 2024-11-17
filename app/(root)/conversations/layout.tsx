@@ -7,7 +7,7 @@ import React from "react";
 import DMConversationItem from "./_components/DMConversationItem";
 import CreateGroupDialog from "./_components/CreateGroupDialog";
 import GroupConversationItem from "./_components/GroupConversationItem";
-import ItemList from "@/components/shared/item-list/ItemList";
+import ItemList from "../../../components/shared/item-list/ItemList";
 
 type Props = React.PropsWithChildren<{}>;
 
