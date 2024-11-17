@@ -11,7 +11,7 @@ import Request from "./_components/Request";
 
 type Props = {};
 
-const FriendsPage = (props: Props) => {
+const FriendsPage = () => {
   const requests = useQuery(api.requests.get);
   return (
     <>
